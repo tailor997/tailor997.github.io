@@ -22,7 +22,16 @@ Get 25H A Day. 一天的时间划成25份，被倒数。
 <li>GPIO</li>
 </ul>
 <h3 id="功能代码"><a href="#功能代码" class="headerlink" title="功能代码"></a>功能代码</h3><ul>
-<li>功能简单，只有一个函数，选择位上显示数字 </li>
+<li><p>定时器中断回调函数中，更新当前时间。</p>
+<ul>
+<li>25小时制的秒数需要计算，在优化代码后，一天误差几秒。</li>
+</ul>
+</li>
+<li><p>显示功能只有一个函数，选择位上显示数字 </p>
+<ul>
+<li>在主函数循环，动态扫描即可</li>
+</ul>
+</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NixieLightDisplay</span><span class="params">(<span class="keyword">uint8_t</span> wei,<span class="keyword">uint8_t</span> num)</span></span>;</span><br></pre></td></tr></table></figure>
 
