@@ -19,14 +19,14 @@ STM32 IAP(UART模式)的Applicati"><meta name="keywords"><meta content="width=de
 <h2 id="移植"><a href="#移植" class="headerlink" title="移植"></a>移植</h2><h3 id="软件结构总述"><a href="#软件结构总述" class="headerlink" title="软件结构总述"></a>软件结构总述</h3><p>MCU:STM32F10C8T6</p>
 <p>因BOOT,APP两个工程，使用全片擦除的烧录器需合并HEX文件。因HEX文件带地址信息，相较BIN文件更方便。</p>
 <p>使用BKP寄存器保存BOOT与APP之间模式转换标志位（地址：IAP_FLAG_ADDR），并通过此标志位判断升级操作。</p>
-<p>![IAP流程图](STM32开发 - IAP升级/IAP流程图.svg)</p>
+<p>![IAP流程图](STM32开发 - IAP升级/IAP流程图.png)</p>
 <h3 id="BOOT软件结构"><a href="#BOOT软件结构" class="headerlink" title="BOOT软件结构"></a>BOOT软件结构</h3><p>pass</p>
 <h3 id="APP软件结构"><a href="#APP软件结构" class="headerlink" title="APP软件结构"></a>APP软件结构</h3><p>####IAP.C</p>
 <ul>
 <li>IAP升级驱动文件</li>
 </ul>
 <h4 id="main-c"><a href="#main-c" class="headerlink" title="main.c"></a>main.c</h4><p>pass</p>
-<h3 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h3><h4 id="Flash使用分析"><a href="#Flash使用分析" class="headerlink" title="Flash使用分析"></a>Flash使用分析</h4><h5 id="Memory-mapping"><a href="#Memory-mapping" class="headerlink" title="Memory mapping"></a>Memory mapping</h5><p><img src="/2020/05/15/STM32%E5%BC%80%E5%8F%91%20-%20IAP%E5%8D%87%E7%BA%A7/clipboard.png" alt="img"></p>
+<h3 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h3><h4 id="Flash使用分析"><a href="#Flash使用分析" class="headerlink" title="Flash使用分析"></a>Flash使用分析</h4><h5 id="Memory-mapping"><a href="#Memory-mapping" class="headerlink" title="Memory mapping"></a>Memory mapping</h5><p>![img](STM32开发 - IAP升级/clipboard.png)</p>
 <table>
 <thead>
 <tr>
@@ -46,7 +46,7 @@ STM32 IAP(UART模式)的Applicati"><meta name="keywords"><meta content="width=de
 <td>0X2 0000</td>
 </tr>
 </tbody></table>
-<h4 id="Flash配置"><a href="#Flash配置" class="headerlink" title="Flash配置"></a>Flash配置</h4><p>![img](STM32开发 - IAP升级/wps1160.tmp.png)</p>
+<h4 id="Flash配置"><a href="#Flash配置" class="headerlink" title="Flash配置"></a>Flash配置</h4><p>![img](STM32开发 - IAP升级/wps1160.png)</p>
 <table>
 <thead>
 <tr>
