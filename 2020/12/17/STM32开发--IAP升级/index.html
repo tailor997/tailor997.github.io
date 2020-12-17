@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Zhe Zhang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="介绍19年3月在三清公司实习时的操作。需要进行IAP方式升级固件。 在GitHub上的参考工程为STD库，减少工作量仅把Application部分移植为HAL库。 参考工程参考工程分为3部分：  STM32 IAP(UART模式)的BOOT部分 STM32 IAP(UART模式)的Application部分（USMART版） winapp-iap-uart STM32 IAP(UART模式)的上位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zhe Zhang">
+<meta property="og:url" content="http://example.com/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/index.html">
+<meta property="og:site_name" content="Zhe Zhang">
+<meta property="og:description" content="介绍19年3月在三清公司实习时的操作。需要进行IAP方式升级固件。 在GitHub上的参考工程为STD库，减少工作量仅把Application部分移植为HAL库。 参考工程参考工程分为3部分：  STM32 IAP(UART模式)的BOOT部分 STM32 IAP(UART模式)的Application部分（USMART版） winapp-iap-uart STM32 IAP(UART模式)的上位">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/IAP%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+<meta property="og:image" content="http://example.com/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/clipboard.png">
+<meta property="og:image" content="http://example.com/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/wps1160.png">
+<meta property="article:published_time" content="2020-12-17T08:54:30.479Z">
+<meta property="article:modified_time" content="2020-05-15T08:04:45.786Z">
+<meta property="article:author" content="Zhe Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/IAP%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Zhe Zhang" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zhe Zhang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-STM32开发--IAP升级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/" class="article-date">
+  <time class="dt-published" datetime="2020-12-17T08:54:30.479Z" itemprop="datePublished">2020-12-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>19年3月在三清公司实习时的操作。需要进行IAP方式升级固件。</p>
+<p>在GitHub上的参考工程为STD库，减少工作量仅把Application部分移植为HAL库。</p>
+<h2 id="参考工程"><a href="#参考工程" class="headerlink" title="参考工程"></a>参考工程</h2><p>参考工程分为3部分：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/havenxie/stm32-iap-uart-boot">STM32 IAP(UART模式)的BOOT部分</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/havenxie/stm32-iap-uart-app">STM32 IAP(UART模式)的Application部分（USMART版）</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/havenxie/winapp-iap-uart">winapp-iap-uart</a><ul>
+<li>STM32 IAP(UART模式)的上位机部分</li>
+<li>下载Application部分固件</li>
+</ul>
+</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>pass</p>
+<h2 id="移植"><a href="#移植" class="headerlink" title="移植"></a>移植</h2><h3 id="软件结构总述"><a href="#软件结构总述" class="headerlink" title="软件结构总述"></a>软件结构总述</h3><p>MCU:STM32F10C8T6</p>
+<p>因BOOT,APP两个工程，使用全片擦除的烧录器需合并HEX文件。因HEX文件带地址信息，相较BIN文件更方便。</p>
+<p>使用BKP寄存器保存BOOT与APP之间模式转换标志位（地址：IAP_FLAG_ADDR），并通过此标志位判断升级操作。</p>
+<p><img src="STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/IAP%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="IAP流程图"></p>
+<h3 id="BOOT软件结构"><a href="#BOOT软件结构" class="headerlink" title="BOOT软件结构"></a>BOOT软件结构</h3><p>pass</p>
+<h3 id="APP软件结构"><a href="#APP软件结构" class="headerlink" title="APP软件结构"></a>APP软件结构</h3><p>####IAP.c</p>
+<ul>
+<li>IAP升级驱动文件</li>
+</ul>
+<h4 id="main-c"><a href="#main-c" class="headerlink" title="main.c"></a>main.c</h4><p>pass</p>
+<h3 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h3><h4 id="Flash使用分析"><a href="#Flash使用分析" class="headerlink" title="Flash使用分析"></a>Flash使用分析</h4><h5 id="Memory-mapping"><a href="#Memory-mapping" class="headerlink" title="Memory mapping"></a>Memory mapping</h5><p><img src="STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/clipboard.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th>Flash大小</th>
+<th>64KB</th>
+<th>128KB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Flash末端地址（始端皆为0X0800 0000）</td>
+<td>0X0800 FFFF</td>
+<td>0x0801 FFFF</td>
+</tr>
+<tr>
+<td>Flash地址范围大小</td>
+<td>0X1 0000</td>
+<td>0X2 0000</td>
+</tr>
+</tbody></table>
+<h4 id="Flash配置"><a href="#Flash配置" class="headerlink" title="Flash配置"></a>Flash配置</h4><p><img src="STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/wps1160.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th>64KB</th>
+<th>Start起始地址</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BOOT</td>
+<td>0x0800 0000</td>
+<td>0x3000</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>0x0800 3000</td>
+<td>0XD000</td>
+</tr>
+</tbody></table>
+<h4 id="中断向量盘偏移"><a href="#中断向量盘偏移" class="headerlink" title="中断向量盘偏移"></a>中断向量盘偏移</h4><p><a target="_blank" rel="noopener" href="http://www.51hei.com/bbs/dpj-43140-1.html">参考-STM32IAP升级—编写IAP升级遇到的问题总结</a></p>
+<ul>
+<li>STD库</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NVIC_Configuration</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">ifdef</span>  VECT_TAB_RAM</span></span><br><span class="line">    <span class="comment">/* Set the Vector Table base location at 0x20000000 */</span></span><br><span class="line">    NVIC_SetVectorTable(NVIC_VectTab_RAM, <span class="number">0x0</span>);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">else</span>  <span class="comment">/* VECT_TAB_FLASH  */</span></span></span><br><span class="line">    <span class="comment">/* Set the Vector Table base location at 0x08000000 */</span></span><br><span class="line">    NVIC_SetVectorTable(NVIC_VectTab_FLASH, <span class="number">0x0</span>);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载固件"><a href="#下载固件" class="headerlink" title="下载固件"></a>下载固件</h2><h3 id="JLINK下载BIN文件"><a href="#JLINK下载BIN文件" class="headerlink" title="JLINK下载BIN文件"></a>JLINK下载BIN文件</h3><p>pass</p>
+<h3 id="使用J-Flash制作合并烧写文件"><a href="#使用J-Flash制作合并烧写文件" class="headerlink" title="使用J-Flash制作合并烧写文件"></a>使用J-Flash制作合并烧写文件</h3><p>pass</p>
+<h3 id="winapp-iap-uart更新固件"><a href="#winapp-iap-uart更新固件" class="headerlink" title="winapp-iap-uart更新固件"></a><a target="_blank" rel="noopener" href="https://github.com/havenxie/winapp-iap-uart">winapp-iap-uart</a>更新固件</h3><p>pass</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/" data-id="ckislyw380005u0tl0ve1eez2" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/12/17/to_sis_ting/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/17/Hexo%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Konw/">Konw</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%B6%E9%97%B4%E8%BD%B4/">时间轴</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%AD%8C%E5%8D%95/">歌单</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%90%90%E8%AE%B0/">琐记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/12/17/%E5%85%B3%E4%BA%8EMarkdown/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/17/%E5%85%B3%E4%BA%8E%E3%80%8A%E5%90%8E%E6%B5%AA%E3%80%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/17/%E5%9F%8E%E5%B8%82%E4%B9%8B%E5%A3%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/17/to_sis_ting/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/17/STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2020 Zhe Zhang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
