@@ -1,8 +1,157 @@
-{%- extends "_layout.swig" -%}
-{%- import '_macro/post.swig' as post_template -%}
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-{%- block title -%} {{ page.title }} - {{ config.title }} {%- endblock -%}
 
-{%- block content -%}
-  {{ post_template.render(page) }}
-{%- endblock -%}
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<link rel="alternate" href="/default" title="Zhe Zhang" ><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="http://example.com/2020/12/17/Hexo使用之三/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title> - Zhe Zhang</title>
+  <meta name="generator" content="Hexo 5.2.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Zhe Zhang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Zhe Zhang</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-12-17
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%B8%89"><span class="toc-text">Hexo使用之三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%88%B0%E6%96%B0%E8%AE%BE%E5%A4%87"><span class="toc-text">迁移到新设备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%84"><span class="toc-text">Hexo文件解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-Hexo"><span class="toc-text">Git Hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">添加评论系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%8F%B0%E6%AF%94%E8%BE%83"><span class="toc-text">平台比较</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9pinglunxitong"><span class="toc-text">第三方pinglunxitong</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8Egit-issue"><span class="toc-text">基于git issue</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#gitment"><span class="toc-text">gitment</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gitalk"><span class="toc-text">gitalk</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gitment-1"><span class="toc-text">gitment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#hexo-d-g"><span class="toc-text">hexo d -g</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><h1 id="Hexo使用之三"><a href="#Hexo使用之三" class="headerlink" title="Hexo使用之三"></a>Hexo使用之三</h1><h2 id="迁移到新设备"><a href="#迁移到新设备" class="headerlink" title="迁移到新设备"></a>迁移到新设备</h2><h3 id="Hexo文件解构"><a href="#Hexo文件解构" class="headerlink" title="Hexo文件解构"></a>Hexo文件解构</h3><h3 id="Git-Hexo"><a href="#Git-Hexo" class="headerlink" title="Git Hexo"></a>Git Hexo</h3><h2 id="添加评论系统"><a href="#添加评论系统" class="headerlink" title="添加评论系统"></a>添加评论系统</h2><p>已有其他平台稳定外联</p>
+<h3 id="平台比较"><a href="#平台比较" class="headerlink" title="平台比较"></a>平台比较</h3><h4 id="第三方pinglunxitong"><a href="#第三方pinglunxitong" class="headerlink" title="第三方pinglunxitong"></a>第三方pinglunxitong</h4><h4 id="基于git-issue"><a href="#基于git-issue" class="headerlink" title="基于git issue"></a>基于git issue</h4><h5 id="gitment"><a href="#gitment" class="headerlink" title="gitment"></a>gitment</h5><h5 id="gitalk"><a href="#gitalk" class="headerlink" title="gitalk"></a>gitalk</h5><h3 id="gitment-1"><a href="#gitment-1" class="headerlink" title="gitment"></a>gitment</h3><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h6 id="hexo-d-g"><a href="#hexo-d-g" class="headerlink" title="hexo d -g"></a>hexo d -g</h6><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fatal: unable to access <span class="string">&#x27;https://github.com/tailor997/tailor997.github.io.git/&#x27;</span>: OpenSSL SSL_connect: Connection was reset <span class="keyword">in</span> connection to github.com:<span class="number">443</span></span><br><span class="line">FATAL Something<span class="string">&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (F:\Project\Hexo\node_modules\_hexo-util@1.9.0@hexo-util\lib\spawn.js:51:21)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (events.js:310:20)</span></span><br><span class="line"><span class="string">    at ChildProcess.cp.emit (F:\Project\Hexo\node_modules\_cross-spawn@7.0.2@cross-spawn\lib\enoent.js:34:29)</span></span><br><span class="line"><span class="string">    at Process.ChildProcess._handle.onexit (internal/child_process.js:275:12)</span></span><br></pre></td></tr></table></figure>
+
+<p>解决操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy </span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://example.com">Zhe Zhang</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://example.com/2020/12/17/Hexo%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%B8%89/">http://example.com/2020/12/17/Hexo%E4%BD%BF%E7%94%A8%E4%B9%8B%E4%B8%89/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="prev" href="/2020/12/17/Hexo%E4%BC%98%E5%8C%96/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"></span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2020/12/17/git%E4%BB%A3%E7%A0%81%E5%88%B0GitHub/">
+        <span class="next-text nav-default"></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2015 - 2020<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Zhe Zhang</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
