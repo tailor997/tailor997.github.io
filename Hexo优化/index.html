@@ -13,7 +13,7 @@
     
     
       
-        <title>demo - X-Zhe</title>
+        <title>Hexo优化 - X-Zhe</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#demo" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              demo
+              Hexo优化
             
           </span>
         </div>
@@ -425,8 +425,109 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    主题
+  </a>
+  
+    <nav class="md-nav" aria-label="主题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yilia-plus" class="md-nav__link">
+    Yilia-plus
+  </a>
+  
+    <nav class="md-nav" aria-label="Yilia-plus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#warning1" class="md-nav__link">
+    warning1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warning2" class="md-nav__link">
+    warning2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    侧边栏社交小图标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rss" class="md-nav__link">
+    RSS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    域名访问
+  </a>
+  
+    <nav class="md-nav" aria-label="域名访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    评论
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#md" class="md-nav__link">
+    MD差异
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -441,10 +542,84 @@
                   
 
 
-<h1 id="demo">demo</h1>
+  <h1>Hexo优化</h1>
+
+<h2 id="_1">主题</h2>
+<p><a href="https://hexo.io/themes/">Hexo官网的主题页</a></p>
+<p>GitHub关键词“hexo theme”</p>
+<h3 id="yilia-plus"><a href="https://github.com/JoeyBling/hexo-theme-yilia-plus">Yilia-plus</a></h3>
 <ul>
-<li>welcome to xzhe.me</li>
+<li>安装</li>
 </ul>
+<pre><code class="language-shell">cd blog
+git clone https://github.com/JoeyBling/hexo-theme-yilia-plus
+cd themes/yilia-plus
+git pull
+</code></pre>
+<ul>
+<li>本地查看</li>
+</ul>
+<pre><code>$ hexo g -d  &amp; hexo s
+</code></pre>
+<ul>
+<li>上传</li>
+</ul>
+<pre><code>$ hexo d
+</code></pre>
+<h6 id="warning1">warning1</h6>
+<pre><code class="language-shell"># Github Download ZIP 解压后
+$ git pull
+fatal: not a git repository (or any of the parent directories): .git
+</code></pre>
+<ul>
+<li>缺少 .git</li>
+<li>可使用GitHub Desktop  clone ,copy.</li>
+</ul>
+<blockquote>
+<p>在git 克隆代码之后，还不能直接使用git，而需要初始化git，它会自动创建git仓库需要的目录。这些文件存在于项目下的.git文件夹下。</p>
+</blockquote>
+<h6 id="warning2">warning2</h6>
+<ul>
+<li>
+<p>多次安装主题，没效果</p>
+</li>
+<li>
+<p>使用hexo clean ,再安装</p>
+</li>
+</ul>
+<h3 id="_2">侧边栏社交小图标</h3>
+<p>打开主题配置文件（<code>_config.yml</code>），搜索<code>social_icons:</code>,在 <a href="http://fontawesome.io/icons/">图标库</a> 找自己喜欢的小图标，并将名字复制在如下位置，保存即可</p>
+<h2 id="rss">RSS</h2>
+<h2 id="_3">域名访问</h2>
+<ul>
+<li>Dynadot</li>
+<li>注册zzhe.me<ul>
+<li>.me是黑山国家域名，一朝赛博南斯拉夫瓷</li>
+</ul>
+</li>
+<li>DNS设置<ul>
+<li>自定义DNS</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>一开始选择 隐性转发 ，虽然便捷，但界面在移动端不适配。</p>
+</blockquote>
+<ul>
+<li>Github</li>
+<li>找到托管博客的<code>xxx.github.io</code>项目</li>
+<li>进入到设置页面，并滑动到下方，找到<strong>Github Pages</strong>这一栏，在<strong>Custom Domain</strong>填上刚刚添加解析的域名并保存：</li>
+</ul>
+<h4 id="_4">参考</h4>
+<p><a href="https://www.jianshu.com/p/2647e079741f">三步搞定Github Pages自定义域名</a></p>
+<h2 id="_5">评论</h2>
+<h2 id="md">MD差异</h2>
+<ul>
+<li>.md文件名也做一级标题，故可在文章内省略一级标题</li>
+</ul>
+<h2 id="other">Other</h2>
+<p><a href="https://sspai.com/post/59904">浅谈我为什么从 HEXO 迁移到 HUGO</a></p>
+<p>看了篇文章，Hexo瞬间不香了，先用着主流的吧，坑少，省精力</p>
 
 
 

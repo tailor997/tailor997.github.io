@@ -13,7 +13,7 @@
     
     
       
-        <title>demo - X-Zhe</title>
+        <title>STM32开发--IAP升级 - X-Zhe</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#demo" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              demo
+              STM32开发--IAP升级
             
           </span>
         </div>
@@ -194,12 +194,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -220,11 +222,210 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          STM32开发--IAP升级
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         STM32开发--IAP升级
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考工程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    原理
+  </a>
+  
+    <nav class="md-nav" aria-label="原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    移植
+  </a>
+  
+    <nav class="md-nav" aria-label="移植">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    软件结构总述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot" class="md-nav__link">
+    BOOT软件结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app" class="md-nav__link">
+    APP软件结构
+  </a>
+  
+    <nav class="md-nav" aria-label="APP软件结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iapc" class="md-nav__link">
+    IAP.c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mainc" class="md-nav__link">
+    main.c
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash" class="md-nav__link">
+    Flash
+  </a>
+  
+    <nav class="md-nav" aria-label="Flash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flash_1" class="md-nav__link">
+    Flash使用分析
+  </a>
+  
+    <nav class="md-nav" aria-label="Flash使用分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-mapping" class="md-nav__link">
+    Memory mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash_2" class="md-nav__link">
+    Flash配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    中断向量盘偏移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    下载固件
+  </a>
+  
+    <nav class="md-nav" aria-label="下载固件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jlinkbin" class="md-nav__link">
+    JLINK下载BIN文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j-flash" class="md-nav__link">
+    使用J-Flash制作合并烧写文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winapp-iap-uart" class="md-nav__link">
+    winapp-iap-uart更新固件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -425,8 +626,183 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考工程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    原理
+  </a>
+  
+    <nav class="md-nav" aria-label="原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    移植
+  </a>
+  
+    <nav class="md-nav" aria-label="移植">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    软件结构总述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot" class="md-nav__link">
+    BOOT软件结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app" class="md-nav__link">
+    APP软件结构
+  </a>
+  
+    <nav class="md-nav" aria-label="APP软件结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iapc" class="md-nav__link">
+    IAP.c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mainc" class="md-nav__link">
+    main.c
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash" class="md-nav__link">
+    Flash
+  </a>
+  
+    <nav class="md-nav" aria-label="Flash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flash_1" class="md-nav__link">
+    Flash使用分析
+  </a>
+  
+    <nav class="md-nav" aria-label="Flash使用分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-mapping" class="md-nav__link">
+    Memory mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash_2" class="md-nav__link">
+    Flash配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    中断向量盘偏移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    下载固件
+  </a>
+  
+    <nav class="md-nav" aria-label="下载固件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jlinkbin" class="md-nav__link">
+    JLINK下载BIN文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j-flash" class="md-nav__link">
+    使用J-Flash制作合并烧写文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winapp-iap-uart" class="md-nav__link">
+    winapp-iap-uart更新固件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -441,10 +817,109 @@
                   
 
 
-<h1 id="demo">demo</h1>
+  <h1>STM32开发--IAP升级</h1>
+
+<h2 id="_1">介绍</h2>
+<p>19年3月在三清公司实习时的操作。需要进行IAP方式升级固件。</p>
+<p>在GitHub上的参考工程为STD库，减少工作量仅把Application部分移植为HAL库。</p>
+<h2 id="_2">参考工程</h2>
+<p>参考工程分为3部分：</p>
 <ul>
-<li>welcome to xzhe.me</li>
+<li><a href="https://github.com/havenxie/stm32-iap-uart-boot">STM32 IAP(UART模式)的BOOT部分</a></li>
+<li><a href="https://github.com/havenxie/stm32-iap-uart-app">STM32 IAP(UART模式)的Application部分（USMART版）</a></li>
+<li><a href="https://github.com/havenxie/winapp-iap-uart">winapp-iap-uart</a></li>
+<li>STM32 IAP(UART模式)的上位机部分</li>
+<li>下载Application部分固件</li>
 </ul>
+<h2 id="_3">原理</h2>
+<h3 id="_4">参考</h3>
+<p>pass</p>
+<h2 id="_5">移植</h2>
+<h3 id="_6">软件结构总述</h3>
+<p>MCU:STM32F10C8T6</p>
+<p>因BOOT,APP两个工程，使用全片擦除的烧录器需合并HEX文件。因HEX文件带地址信息，相较BIN文件更方便。</p>
+<p>使用BKP寄存器保存BOOT与APP之间模式转换标志位（地址：IAP_FLAG_ADDR），并通过此标志位判断升级操作。</p>
+<p><img alt="IAP流程图" src="../STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/IAP%E6%B5%81%E7%A8%8B%E5%9B%BE.png" /></p>
+<h3 id="boot">BOOT软件结构</h3>
+<p>pass</p>
+<h3 id="app">APP软件结构</h3>
+<h4 id="iapc">IAP.c</h4>
+<ul>
+<li>IAP升级驱动文件</li>
+</ul>
+<h4 id="mainc">main.c</h4>
+<p>pass</p>
+<h3 id="flash">Flash</h3>
+<h4 id="flash_1">Flash使用分析</h4>
+<h5 id="memory-mapping">Memory mapping</h5>
+<p><img alt="img" src="../STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/clipboard.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Flash大小</th>
+<th>64KB</th>
+<th>128KB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flash末端地址（始端皆为0X0800 0000）</td>
+<td>0X0800 FFFF</td>
+<td>0x0801 FFFF</td>
+</tr>
+<tr>
+<td>Flash地址范围大小</td>
+<td>0X1 0000</td>
+<td>0X2 0000</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flash_2">Flash配置</h4>
+<p><img alt="img" src="../STM32%E5%BC%80%E5%8F%91--IAP%E5%8D%87%E7%BA%A7.assets/wps1160.png" /></p>
+<table>
+<thead>
+<tr>
+<th>64KB</th>
+<th>Start起始地址</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BOOT</td>
+<td>0x0800 0000</td>
+<td>0x3000</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>0x0800 3000</td>
+<td>0XD000</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_7">中断向量盘偏移</h4>
+<p><a href="http://www.51hei.com/bbs/dpj-43140-1.html">参考-STM32IAP升级---编写IAP升级遇到的问题总结</a></p>
+<ul>
+<li>STD库</li>
+</ul>
+<pre><code class="language-C">void NVIC_Configuration(void)
+{
+    #ifdef  VECT_TAB_RAM
+    /* Set the Vector Table base location at 0x20000000 */
+    NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0);
+    #else  /* VECT_TAB_FLASH  */
+    /* Set the Vector Table base location at 0x08000000 */
+    NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+    #endif
+}
+</code></pre>
+<h2 id="_8">下载固件</h2>
+<h3 id="jlinkbin">JLINK下载BIN文件</h3>
+<p>pass</p>
+<h3 id="j-flash">使用J-Flash制作合并烧写文件</h3>
+<p>pass</p>
+<h3 id="winapp-iap-uart"><a href="https://github.com/havenxie/winapp-iap-uart">winapp-iap-uart</a>更新固件</h3>
+<p>pass</p>
 
 
 
@@ -460,6 +935,27 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+      
+        
+        <a href="../25H%EF%BC%88LED%E7%89%88%EF%BC%89/" class="md-footer__link md-footer__link--next" aria-label="Next: 25H（LED版）" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              25H（LED版）
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

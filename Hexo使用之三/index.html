@@ -13,7 +13,7 @@
     
     
       
-        <title>demo - X-Zhe</title>
+        <title>Hexo使用之三 - X-Zhe</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#demo" class="md-skip">
+        <a href="#hexo" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              demo
+              Hexo使用之三
             
           </span>
         </div>
@@ -428,6 +428,128 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    迁移到新设备
+  </a>
+  
+    <nav class="md-nav" aria-label="迁移到新设备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hexo_1" class="md-nav__link">
+    Hexo文件解构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-hexo" class="md-nav__link">
+    Git Hexo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    添加评论系统
+  </a>
+  
+    <nav class="md-nav" aria-label="添加评论系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    平台比较
+  </a>
+  
+    <nav class="md-nav" aria-label="平台比较">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinglunxitong" class="md-nav__link">
+    第三方pinglunxitong
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-issue" class="md-nav__link">
+    基于git issue
+  </a>
+  
+    <nav class="md-nav" aria-label="基于git issue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitment" class="md-nav__link">
+    gitment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitalk" class="md-nav__link">
+    gitalk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitment_1" class="md-nav__link">
+    gitment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    其他
+  </a>
+  
+    <nav class="md-nav" aria-label="其他">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hexo-d-g" class="md-nav__link">
+    hexo d -g
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -441,10 +563,32 @@
                   
 
 
-<h1 id="demo">demo</h1>
-<ul>
-<li>welcome to xzhe.me</li>
-</ul>
+<h1 id="hexo">Hexo使用之三</h1>
+<h2 id="_1">迁移到新设备</h2>
+<h3 id="hexo_1">Hexo文件解构</h3>
+<h3 id="git-hexo">Git Hexo</h3>
+<h2 id="_2">添加评论系统</h2>
+<p>已有其他平台稳定外联</p>
+<h3 id="_3">平台比较</h3>
+<h4 id="pinglunxitong">第三方pinglunxitong</h4>
+<h4 id="git-issue">基于git issue</h4>
+<h5 id="gitment">gitment</h5>
+<h5 id="gitalk">gitalk</h5>
+<h3 id="gitment_1">gitment</h3>
+<h2 id="_4">其他</h2>
+<h6 id="hexo-d-g">hexo d -g</h6>
+<pre><code class="language-powershell">fatal: unable to access 'https://github.com/tailor997/tailor997.github.io.git/': OpenSSL SSL_connect: Connection was reset in connection to github.com:443
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: Spawn failed
+    at ChildProcess.&lt;anonymous&gt; (F:\Project\Hexo\node_modules\_hexo-util@1.9.0@hexo-util\lib\spawn.js:51:21)
+    at ChildProcess.emit (events.js:310:20)
+    at ChildProcess.cp.emit (F:\Project\Hexo\node_modules\_cross-spawn@7.0.2@cross-spawn\lib\enoent.js:34:29)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:275:12)
+</code></pre>
+<p>解决操作</p>
+<pre><code class="language-shell">git config --global --unset http.proxy 
+git config --global --unset https.proxy
+</code></pre>
 
 
 
