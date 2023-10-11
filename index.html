@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimized Random Display Using Pure JS</title>
+    <title>Noise</title>
 </head>
 
 <body style="margin:0; padding:0; overflow:hidden;">
@@ -16,16 +16,17 @@
 
     window.onload = function() {
         canvas = document.getElementById('canvas');
-        // canvas.width = window.innerWidth;
-        // canvas.height = window.innerHeight;
-        canvas.width = 1280;
-        canvas.height = 720;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // canvas.width = 1280;
+        // canvas.height = 720;
 
         ctx = canvas.getContext('2d');
         imgData = ctx.createImageData(canvas.width, canvas.height);
         data = new Uint8ClampedArray(canvas.width * canvas.height * 4);
 
-        setInterval(drawRandomPixels, 1000 / 24); // 24 times per second
+        // setInterval(drawRandomPixels, 1000 / 24); // 24 times per second
+        setInterval(drawRandomPixels, 1000 / 12); // 24 times per second
     }
 
     function drawRandomPixels() {
