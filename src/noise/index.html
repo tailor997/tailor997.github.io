@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise</title>
+</head>
+
+<body style="margin:0; padding:0; overflow:hidden;">
+
+<canvas id="canvas" style="display:block; margin: 0 auto;"></canvas>
+
+<script type="text/javascript">
+    let canvas, ctx, imgData, data;
+
+    window.onload = function() {
+        canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // canvas.width = 1280;
+        // canvas.height = 720;
+
+        ctx = canvas.getContext('2d');
+        imgData = ctx.createImageData(canvas.width, canvas.height);
+        data = new Uint8ClampedArray(canvas.width * canvas.height * 4);
+
+        // setInterval(drawRandomPixels, 1000 / 24); // 24 times per second
+        setInterval(drawRandomPixels, 1000 / 12); // 24 times per second
+    }
+
+    function drawRandomPixels() {
+        for (let i = 0; i < data.length; i += 4) {
+            data[i] = Math.floor(Math.random() * 256);     // Red
+            data[i + 1] = Math.floor(Math.random() * 256); // Green
+            data[i + 2] = Math.floor(Math.random() * 256); // Blue
+            data[i + 3] = 255;                             // Alpha
+        }
+        
+        imgData.data.set(data);
+        ctx.putImageData(imgData, 0, 0);
+    }
+
+</script>
+
+</body>
+</html>
